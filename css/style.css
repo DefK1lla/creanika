@@ -1448,6 +1448,7 @@ select {
 
     position: relative;
     right: none;
+    z-index: 999;
 }
 
 @media (max-width: 991px) {

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alice&family=Lato:ital,wght@0,400;0,700;1,400&family=Philosopher:ital@1&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- SVG SPrites -->
+    <svg style="display: none">
+        <symbol id="insta" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <path
+                    d="M5.83207 0C2.61624 0 0.000366211 2.61829 0.000366211 5.83496V14.1683C0.000366211 17.3841 2.61866 20 5.83533 20H14.1687C17.3845 20 20.0004 17.3817 20.0004 14.165V5.83171C20.0004 2.61587 17.3821 0 14.1654 0H5.83207ZM15.8337 3.33333C16.2937 3.33333 16.667 3.70667 16.667 4.16667C16.667 4.62667 16.2937 5 15.8337 5C15.3737 5 15.0004 4.62667 15.0004 4.16667C15.0004 3.70667 15.3737 3.33333 15.8337 3.33333ZM10.0004 5C12.7579 5 15.0004 7.2425 15.0004 10C15.0004 12.7575 12.7579 15 10.0004 15C7.24287 15 5.00037 12.7575 5.00037 10C5.00037 7.2425 7.24287 5 10.0004 5ZM10.0004 6.66667C8.15942 6.66667 6.66703 8.15905 6.66703 10C6.66703 11.8409 8.15942 13.3333 10.0004 13.3333C11.8413 13.3333 13.3337 11.8409 13.3337 10C13.3337 8.15905 11.8413 6.66667 10.0004 6.66667Z" />
+            </g>
+        </symbol>
+
+        <symbol id="vk" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <path
+                    d="M18.6799 0.919922H3.31992C1.99512 0.919922 0.919922 1.99512 0.919922 3.31992V18.6799C0.919922 20.0047 1.99512 21.0799 3.31992 21.0799H18.6799C20.0047 21.0799 21.0799 20.0047 21.0799 18.6799V3.31992C21.0799 1.99512 20.0047 0.919922 18.6799 0.919922ZM17.1055 14.8399L15.3151 14.8351C15.3151 14.8351 15.2767 14.8399 15.2143 14.8399C15.0703 14.8399 14.7727 14.8015 14.4223 14.5615C13.7935 14.1247 13.1935 13.0399 12.7183 13.0399C12.6847 13.0399 12.6559 13.0447 12.6271 13.0543C12.2143 13.1839 12.0895 13.5967 12.0895 14.1007C12.0895 14.2783 11.9647 14.3599 11.6287 14.3599H10.7023C9.66552 14.3599 8.66232 14.3359 7.53432 13.1023C5.87352 11.2831 4.31832 8.04792 4.31832 8.04792C4.31832 8.04792 4.23192 7.86072 4.32312 7.75032C4.40952 7.64952 4.61112 7.63992 4.68792 7.63992C4.70712 7.63992 4.71672 7.63992 4.71672 7.63992H6.63672C6.63672 7.63992 6.81432 7.67352 6.94392 7.76952C7.05432 7.85112 7.11192 7.99992 7.11192 7.99992C7.11192 7.99992 7.43832 8.63352 7.84632 9.34872C8.53272 10.5295 8.90232 10.9231 9.16632 10.9231C9.20952 10.9231 9.25272 10.9135 9.29592 10.8895C9.68952 10.6735 9.57432 8.92632 9.57432 8.92632C9.57432 8.92632 9.57912 8.29272 9.37272 8.01432C9.21432 7.79352 8.91192 7.73112 8.77752 7.71192C8.67192 7.69752 8.84472 7.44792 9.07512 7.33272C9.37272 7.18872 9.86712 7.15992 10.4623 7.15992H10.7503C11.3119 7.16952 11.3263 7.22712 11.5471 7.27992C12.2095 7.43832 11.9839 8.05752 11.9839 9.54072C11.9839 10.0159 11.8975 10.6831 12.2383 10.9087C12.2623 10.9231 12.2959 10.9327 12.3391 10.9327C12.5599 10.9327 13.0351 10.6495 13.7935 9.36792C14.2159 8.63832 14.5423 7.91352 14.5423 7.91352C14.5423 7.91352 14.6143 7.78392 14.7247 7.71672C14.8303 7.65432 14.8303 7.65432 14.9695 7.65432H14.9839C15.1375 7.65432 16.6639 7.63992 16.9999 7.63992H17.0383C17.3599 7.63992 17.6527 7.64472 17.7055 7.84152C17.7823 8.13912 17.4703 8.67192 16.6495 9.77592C15.2959 11.5855 15.1423 11.4511 16.2655 12.4975C17.3407 13.4959 17.5615 13.9807 17.5999 14.0431C18.0463 14.7823 17.1055 14.8399 17.1055 14.8399Z" />
+            </g>
+        </symbol>
+
+        <symbol id="fb" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <path
+                    d="M18.68 0.919922H3.32004C1.99524 0.919922 0.920044 1.99512 0.920044 3.31992V18.6799C0.920044 20.0047 1.99524 21.0799 3.32004 21.0799H18.68C20.0048 21.0799 21.08 20.0047 21.08 18.6799V3.31992C21.08 1.99512 20.0048 0.919922 18.68 0.919922ZM16.76 8.11992H15.8C14.7728 8.11992 14.36 8.35992 14.36 9.07992V10.5199H16.76L16.28 12.9199H14.36V20.1199H11.96V12.9199H10.04V10.5199H11.96V9.07992C11.96 7.15992 12.92 5.71992 14.84 5.71992C16.232 5.71992 16.76 6.19992 16.76 6.19992V8.11992Z" />
+            </g>
+        </symbol>
+    </svg>
+
+    <div class="wrapper">
+        <header class="header">
+            <div class="container-xxl">
+                <nav class="header__navbar navbar navbar-expand-lg navbar-dark ">
+                    <div class="logo">
+                        <a class="logo__link navbar-brand" href="#">
+                            <img class="logo__img" src="img/logo.svg">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse flex-wrap" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="navbar__link" href="#">О нас</a>
+                            <a class="navbar__link" href="#">Отзывы</a>
+                            <a class="navbar__link" href="#">Обучение</a>
+                            <a class="navbar__link" href="#">Услуги и цены</a>
+                            <a class="navbar__link" href="#">Библиотека</a>
+                            <a class="navbar__link" href="#">Контакты</a>
+                            <a class="navbar__link navbar__link--insta" href="#">
+                                <img class="insta" src="img/icons/instagram.svg" alt="">
+                                yesboss_pmu</a>
+                        </div>
+
+                        <div class="question justify-content-end">
+                            <a class="question__btn" href="#">ЗАДАТЬ ВОПРОС</a><br>
+                            <a class="question__tel" href="tel:+78008000000">+7 800 800 00 00</a>
+                        </div>
+                    </div>
+                </nav>
+
+
+            </div> <!-- /.container-xl -->
+        </header>
+
+
+        <main class="page">
+            <div class="about">
+                <!-- History -->
+                <section class="history">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h1 class="history__title page-title">
+                                    <span class="title--pink">
+                                        История <br>
+                                        бренда
+                                    </span>
+                                    &lt;&lt;Гимназния&gt;&gt; перманентного макияжа Валентины Куликовой»
+                                </h1>
+                            </div>
+                        </div>
+
+
+                        <div class="history-top row justify-content-between flex-md-nowrap">
+                            <div class="col-12 col-md-6">
+                                <div class="history__text history__text--white">
+                                    <p class="history__par">
+                                        Основательница Валентина Куликова более 5 лет назад пришла в сферу
+                                        перманентного
+                                        макияжа. Выбрав первые курсы, взяла машинку в руки, начала свой путь
+                                        обучения.
+                                    </p>
+
+                                    <p class="history__par d-block d-lg-none">
+                                        Было ли страшно? Безумно! Но непередаваемые ощущения от слов благодарности
+                                        восхищенных моделей и похвала преподавателя, компенсировали волнения
+                                        и страх.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 order-first order-md-last">
+                                <div class="history__img-box history__img-box--right img-before-top">
+                                    <img class="history__img" src="img/about/history/img1.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="history-bottom row justify-content-between align-items-start align-items-xl-center flex-md-nowrap">
+                            <div class="col-12 col-md-6">
+                                <div class="history__img-box history__img-box--left img-after-bottom">
+                                    <img class="history__img" src="img/about/history/img2.jpg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <div class="history__text">
+                                    <p class="history__ par d-none d-lg-block">
+                                        Было ли страшно? Безумно! Но непередаваемые ощущения от слов благодарности
+                                        восхищенных моделей и похвала преподавателя, компенсировали волнения
+                                        и страх.
+                                    </p>
+
+                                    <p class="history__par">
+                                        Окончив курсы постоянно повышала квалификацию, клиенты возвращались вновь
+                                        и вновь. Работала преподавателем в топ-студиях Санкт-Петербурга, оценила
+                                        слабые
+                                        места существующих программ обучения, разработала свою уникальную методику..
+                                    </p class="history__par">
+
+                                    <p class="history__par">
+                                        За три года обучила более 500 человек! Гимназия перманентного макияжа
+                                        Валентины
+                                        Куликовой сделает тебя сильнее и увереннее, поможет понять, пережить
+                                        трудности
+                                        обучения для того, чтобы увидеть счастливые лица клиенток, стать успешным
+                                        мастером, дарить красоту в мир!»
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- /.container -->
+                </section> <!-- /.history -->
+
+
+                <!-- Reviews -->
+                <section class="reviews">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h2 class="reviews__title title">
+                                    Отзывы студентов <span class="title--pink">и клиентов гиманазии</span>
+                                </h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="reviews__slider">
+                                    <div class="reviews__slider-items">
+                                        <div class="reviews__slider-item">
+                                            <a class="reviews__link" href="#">
+                                                <img class="reviews__img" src="img/about/reviews/item1.jpg">
+
+                                                <div
+                                                    class="reviews__link-content d-flex flex-column justify-content-center align-items-center">
+                                                    <p class="revews__link-text">
+                                                        Читать отзыв в инстаграм
+                                                    </p>
+                                                </div>
+                                            </a>
+
+
+                                            <div class="reviews__info d-flex align-items-center">
+                                                <img class="reviews__avatar" src="img/about/reviews/avatar1.png"
+                                                    alt="avatar">
+                                                <span class="reviews__insta">larisarobertovna_1</span>
+                                            </div>
+                                            <p class="reviews__text">
+                                                Ну вот, к сожалению закончился мой курс в направлении-перманентный
+                                                макияж(брови, губы, меж ресничка)...
+                                            </p>
+                                        </div>
+
+                                        <div class="reviews__slider-item">
+                                            <a class="reviews__link" href="#">
+                                                <img class="reviews__img" src="img/about/reviews/item2.jpg">
+
+                                                <div
+                                                    class="reviews__link-content d-flex flex-column justify-content-center align-items-center">
+                                                    <p class="revews__link-text">
+                                                        Читать отзыв в инстаграм
+                                                    </p>
+                                                </div>
+                                            </a>
+
+
+                                            <div class="reviews__info d-flex align-items-center">
+                                                <img class="reviews__avatar" src="img/about/reviews/avatar2.png"
+                                                    alt="avatar">
+                                                <span class="reviews__insta">galikeeva.k2</span>
+                                            </div>
+                                            <p class="reviews__text">
+                                                Спасибо настоящему профессионалу #yesboss_pmu за потрясающе аккуратные
+                                                бровки💕💚
+                                            </p>
+                                        </div>
+
+                                        <div class="reviews__slider-item">
+                                            <a class="reviews__link reviews__link--video" href=" #">
+                                                <img class="reviews__img" src="img/about/reviews/item3.jpg">
+
+                                                <div class="reviews__link-content d-flex flex-column justify-content-center align-items-center"">
+                                                <p class=" reviews__link-text">
+                                                    смотреть видео отзыв
+                                                    </p>
+                                                </div>
+                                            </a>
+
+                                            <p class="reviews__type">
+                                                Видеоотзыв от клиентки
+                                            </p>
+                                            <div class="reviews__info">
+                                                <span class="reviews__procedure">Процедура: пудробое напыление
+                                                    бровей</span>
+                                                <span class="reviews__name">Мастер: Валентина Куликова3</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="reviews__slider-item">
+                                            <a class="reviews__link" href="#">
+                                                <img class="reviews__img" src="img/about/reviews/item1.jpg">
+
+                                                <div
+                                                    class="reviews__link-content d-flex flex-column justify-content-center align-items-center">
+                                                    <p class="revews__link-text">
+                                                        Читать отзыв в инстаграм
+                                                    </p>
+                                                </div>
+                                            </a>
+
+
+                                            <div class="reviews__info d-flex align-items-center">
+                                                <img class="reviews__avatar" src="img/about/reviews/avatar1.png"
+                                                    alt="avatar">
+                                                <span class="reviews__insta">larisarobertovna_4</span>
+                                            </div>
+                                            <p class="reviews__text">
+                                                Ну вот, к сожалению закончился мой курс в направлении-перманентный
+                                                макияж(брови, губы, меж ресничка)...
+                                            </p>
+                                        </div>
+
+                                        <div class="reviews__slider-item">
+                                            <a class="reviews__link" href="#">
+                                                <img class="reviews__img" src="img/about/reviews/item2.jpg">
+
+                                                <div
+                                                    class="reviews__link-content d-flex flex-column justify-content-center align-items-center">
+                                                    <p class="revews__link-text">
+                                                        Читать отзыв в инстаграм
+                                                    </p>
+                                                </div>
+                                            </a>
+
+
+                                            <div class="reviews__info d-flex align-items-center">
+                                                <img class="reviews__avatar" src="img/about/reviews/avatar2.png"
+                                                    alt="avatar">
+                                                <span class="reviews__insta">galikeeva.k5</span>
+                                            </div>
+                                            <p class="reviews__text">
+                                                Спасибо настоящему профессионалу #yesboss_pmu за потрясающе аккуратные
+                                                бровки💕💚
+                                            </p>
+                                        </div>
+
+                                        <div class="reviews__slider-item">
+                                            <a class="reviews__link reviews__link--video" href=" #">
+                                                <img class="reviews__img" src="img/about/reviews/item3.jpg">
+
+                                                <div class="reviews__link-content d-flex flex-column justify-content-center align-items-center"">
+                                                <p class=" reviews__link-text">
+                                                    смотреть видео отзыв
+                                                    </p>
+                                                </div>
+                                            </a>
+
+                                            <p class="reviews__type">
+                                                Видеоотзыв от клиентки
+                                            </p>
+                                            <div class="reviews__info">
+                                                <span class="reviews__procedure">Процедура: пудробое напыление
+                                                    бровей</span>
+                                                <span class="reviews__name">Мастер: Валентина Куликова6</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="reviews__slider-item">
+                                            <a class="reviews__link reviews__link--video" href=" #">
+                                                <img class="reviews__img" src="img/about/reviews/item3.jpg">
+
+                                                <div class="reviews__link-content d-flex flex-column justify-content-center align-items-center"">
+                                                <p class=" reviews__link-text">
+                                                    смотреть видео отзыв
+                                                    </p>
+                                                </div>
+                                            </a>
+
+                                            <p class="reviews__type">
+                                                Видеоотзыв от клиентки
+                                            </p>
+                                            <div class="reviews__info">
+                                                <span class="reviews__procedure">Процедура: пудробое напыление
+                                                    бровей</span>
+                                                <span class="reviews__name">Мастер: Валентина Куликова7</span>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div> <!-- /.reviews__slider-items -->
+                                </div> <!-- /.reviews__slider -->
+                            </div> <!-- /.col -->
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
+                </section>
+
+
+                <!-- Sertificates -->
+                <section class="sertificates">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h2 class="sertificates__title title">
+                                    <span class="line">Сертификаты</span> школы
+                                </h2>
+                            </div>
+                        </div>
+
+                        <div class="sertificates__items row">
+
+                            <img class="sertificates__item" src="img/about/sertificates/item1.jpg" alt="sertificate">
+                            <img class="sertificates__item" src="img/about/sertificates/item2.jpg" alt="sertificate">
+                            <img class="sertificates__item" src="img/about/sertificates/item3.jpg" alt="sertificate">
+                            <img class="sertificates__item" src="img/about/sertificates/item4.jpg" alt="sertificate">
+                            <img class="sertificates__item" src="img/about/sertificates/item5.jpg" alt="sertificate">
+                            <img class="sertificates__item" src="img/about/sertificates/item6.jpg" alt="sertificate">
+
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <a class="sertificates__details" href="#">подробнее о гимназии</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <!-- Learn more -->
+                <section class="learn-more bg-line">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h2 class="learn-more__title title">
+                                    <span class="title--pink">Узнайте</span> о нас больше
+                                </h2>
+
+                                <p class="learn-more__text">
+                                    Предлагаем познакомить с нашей гимназией, преподавателями, студентами и клиентами
+                                </p>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div
+                                        class="learn-more__items d-flex justify-content-around flex-wrap flex-xl-nowrap">
+                                        <div class="learn-more__item d-flex flex-column">
+                                            <div class="learn-more__img-box img-after-bottom">
+                                                <img class="learn-more__img" src="img/about/learn-more/item2.jpg"
+                                                    alt="">
+                                            </div>
+
+                                            <a class="learn-more__link" href="#">преподаватели</a>
+                                        </div>
+
+                                        <div class="learn-more__item d-flex flex-column">
+                                            <div class="learn-more__img-box">
+                                                <img class="learn-more__img" src="img/about/learn-more/item1.jpg"
+                                                    alt="">
+                                            </div>
+
+                                            <a class="learn-more__link" href="#">как мы обучаем</a>
+                                        </div>
+
+                                        <div class="learn-more__item d-flex flex-column">
+                                            <div class="learn-more__img-box img-before-top">
+                                                <img class="learn-more__img" src="img/about/learn-more/item3.jpg"
+                                                    alt="">
+                                            </div>
+
+                                            <a class="learn-more__link" href="#">отзывы</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- /.container -->
+                </section>
+
+            </div> <!-- /.about -->
+        </main>
+
+
+        <footer class="footer">
+            <div class="container-xxl">
+                <div class="row d-flex">
+                    <div class="col-10 col-md-12 col-lg-12 col-xl-4">
+                        <div class="footer__info d-flex">
+                            <div class="footer__logo logo d-flex">
+                                <img class="logo__img" src="img/logo.svg" alt="logo">
+
+
+                            </div>
+
+                            <div
+                                class="footer__social d-flex flex-row flex-xl-column justify-content-between justify-content-xl-start align-items-start">
+
+                                <p class="footer__text">Гимназия перманентного макияжа Валентины Куликовой</p>
+                                <div class="social">
+                                    <ul class="social__list d-flex align-items-start">
+                                        <li class="social__item">
+                                            <a class="social__link" href="#">
+                                                <svg class="social__icon">
+                                                    <use xlink:href="#insta"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="social__item">
+                                            <a class="social__link" href="#">
+                                                <svg class="social__icon">
+                                                    <use xlink:href="#vk"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="social__item">
+                                            <a class="social__link" href="#">
+                                                <svg class="social__icon">
+                                                    <use xlink:href="#fb"></use>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div> <!-- /.social -->
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-7 col-xl-5">
+                        <div class="footer__navbar navbar">
+                            <ul
+                                class="navbar__list d-flex flex-wrap flex-column justify-content-start align-items-start">
+                                <li class="navbar__item">
+                                    <a class="navbar__link" href="#">О нас</a>
+                                </li>
+                                <li class="navbar__item">
+                                    <a class="navbar__link" href="#">Преподаватели</a>
+                                </li>
+                                <li class="navbar__item">
+                                    <a class="navbar__link" href="#">Отзывы</a>
+                                </li>
+                                <li class="navbar__item">
+                                    <a class="navbar__link" href="#">Обучение</a>
+                                </li>
+                                <li class="navbar__item">
+                                    <a class="navbar__link" href="#">Курсы</a>
+                                </li>
+                                <li class="navbar__item">
+                                    <a class="navbar__link" href="#">Услуги и цена</a>
+                                </li>
+                                <li class="navbar__item">
+                                    <a class="navbar__link" href="#">Библиотека</a>
+                                </li>
+                                <li class="navbar__item">
+                                    <a class="navbar__link" href="#">Контакты</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-5 col-xl-3">
+                        <div class="footer__contacts">
+
+                            <ul class="footer__list d-flex flex-wrap flex-md-column">
+                                <li class="footer__item footer__item--phone order-1">
+                                    <a class="footer__phone" href="tel:+78008000000">+7 800 800 00 00</a>
+                                </li>
+                                <li class="footer__item footer__item--address order-last order-md-2">
+                                    <address class="footer__address">Выборгское ш., 15, Санкт-Петербург, 194214
+                                    </address>
+                                </li>
+                                <li class="footer__item footer__item--email order-3">
+                                    <a class="footer__email" href="mailto:permanent@yandex.ru">permanent@yandex.ru</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div> <!-- /.row -->
+            </div> <!-- /.container-xl -->
+
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Request -->
+                        <section class="connect d-flex justify-content-between flex-wrap">
+                            <h2 class="connect__title title">
+                                Оставить <span>заявку</span>
+                            </h2>
+
+                            <div class="connect__form">
+                                <form class="form d-flex flex-wrap" action="#">
+                                    <div class="form__inputs d-flex flex-column align-items-start">
+                                        <div
+                                            class="form__group d-flex justify-content-between flex-wrap flex-md-nowrap">
+                                            <label class="form__label" for="name">Здравствуйте, меня зовут*</label>
+                                            <input class="form__input form__name" id="name" type="text" name="name">
+                                        </div>
+
+                                        <div
+                                            class="form__group d-flex justify-content-between flex-wrap flex-md-nowrap">
+                                            <label class="form__label" for="study-select">Я планирую научиться*</label>
+                                            <select class="form__input form__select" id="study-select"
+                                                name="study-select">
+                                                <option class="form__option" value="option1">
+                                                    option1
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <div
+                                            class="form__group d-flex justify-content-between flex-wrap flex-md-nowrap">
+                                            <label class="form__label" for="phone">Со мной можно связаться по
+                                                телефону*</label>
+                                            <input class="form__input form__phone" id="phone" type="tel" name="phone">
+                                        </div>
+
+                                        <div
+                                            class="form__group d-flex justify-content-between flex-wrap flex-md-nowrap">
+                                            <input class="form__checkbox" id="agreement" type="checkbox">
+                                            <label class="form__label checkbox-label" for="agreement">Согласен на
+                                                обработку
+                                                персональных
+                                                данных</label>
+                                        </div>
+                                    </div>
+
+                                    <button class="form__btn" type="subtim">хочу на бесплатный урок</button>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <p class="footer__copy">
+                            © Гимназия перманентного макияжа В. Куликовой, 2021
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- /.wrapper -->
+
+
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

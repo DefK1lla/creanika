@@ -1436,7 +1436,6 @@ select {
     margin-bottom: 90px;
 
     position: relative;
-    z-index: 999;
 }
 
 .master__slider {
@@ -1447,8 +1446,7 @@ select {
     transform: translateX(-250px);
 
     position: relative;
-    right: none;
-    z-index: 999;
+    z-index: 9999;
 }
 
 @media (max-width: 991px) {
@@ -1542,7 +1540,7 @@ select {
 
 .master__slider-items {
     position: relative;
-    z-index: 0;
+    z-index: 9999;
 }
 
 .master__slider-items::before {
@@ -1562,6 +1560,7 @@ select {
 .master .slick-dots {
     bottom: -95px;
     right: 260px;
+    z-index: 999;
 }
 
 .master .slick-next {
@@ -1573,6 +1572,7 @@ select {
 .master .slick-prev {
     bottom: -55px;
     right: 372px;
+    z-index: 999;
 }
 
 .master__num,
@@ -1581,6 +1581,7 @@ select {
     font-style: italic;
     font-size: 24px;
     color: #8c8c8c;
+    z-index: 0;
 }
 
 .master__num {

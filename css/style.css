@@ -1428,7 +1428,7 @@ select {
     }
 
     .teachers__title span {
-        right: -25px;
+        right: 0px;
     }
 }
 
